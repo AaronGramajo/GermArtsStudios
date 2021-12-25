@@ -1,0 +1,1341 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1d112d;
+}
+
+body h1, h2, h3, h4, a, p {
+    color: rgb(0, 255, 0);
+}
+
+body a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* menos de 385px desaparece el banner por tema de espacio */
+@media screen and (max-width: 385px) {
+    .topbarBanner {
+        display: none;
+    }
+}
+
+/* Mobil */
+@media screen and (max-width: 480px) {
+    .grid_layout {
+        display: grid;
+        grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+    }
+
+    header {
+        grid-area: "header";
+        margin-bottom: 20px;
+    }
+
+    main {
+        grid-area: "main";
+    }
+
+    footer {
+        grid-area: "footer";
+    }
+
+    h2, h3, h4 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    img {
+        width: 108px;
+    }
+
+    /* topbar */
+    header::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    .topBar {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        background-color: black;
+        height: 32px;
+    }
+    .topbarBanner {
+        font-size: 10px;
+    }
+
+    .topbarIconos {
+        display: flex;
+        padding: 0 20px;
+        list-style: none;
+        position: relative;
+    }
+    
+    .topbarIconos li {
+        display: inline-block;
+        margin-left: 10px;
+    }
+    
+    .topbarIconos li a {
+        color: rgb(179, 20, 199);
+    }
+
+    /* navbar */ /*la lista de paginas seria estilo hamburguesa y el logo seria un poco mas grande para cubrir bien el espacio */ 
+    .bottomBar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 32px;
+        margin-left: 13px;
+    }
+
+    .navbar {
+        padding-right: 10px;
+    }
+
+    .navbar ul a:hover {
+        color: rgb(179, 20, 199);
+    }
+    
+    .navbar ul a li::before {
+        content: '';
+        display: block;
+        height: 5px;
+    
+        background-color: rgb(0, 255, 0);
+        position: absolute;
+        top: 0;
+        width: 0%;
+    
+        transition: all ease-in-out 200ms;
+    }
+    
+    .navbar ul a li:hover::before {
+        width: 78px;
+    }
+
+    /* pagina index */
+    /* seccion trabajos recientes */
+    .tituloTrabajos {
+        text-transform: uppercase;
+    }
+
+    .imgTrabajosRecientes {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* seccion servicios */
+    .imgServicios {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .listaServicios li {
+        margin-bottom: 20px;
+    }
+
+    /* seccion contactarme */
+    .contenedor3 {
+        background-color: #523874;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5px;
+    }
+
+    .contratame {
+        padding: 10px 0 10px 0;
+    }
+    
+    .tituloContratame {
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 400;
+        color: #808080;
+    }
+    
+    .botonContactos {
+        margin: auto;
+        background-color: #523874;
+        border: 2px  ridge black
+    }
+    
+    .botonContactos a {
+        color: black;
+    }
+    
+    .botonContactos span {
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+    
+    .botonContactos:hover {
+        background-color: rgb(0, 255, 0);
+    }
+    
+
+    /* Pagina Servicios */
+    .paginaServicios h2 {
+        text-decoration: underline;
+        color: rgb(179, 20, 199);
+    }
+
+    .tituloServicio {
+        text-align: center;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+    ._descripcion {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+
+    b {
+        color: rgb(179, 20, 199);
+    }
+
+    /* seccion pixel art */
+    ._imgPixel {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    ._textPixel, ._imgPixel {
+        margin-bottom: 20px;
+    }
+
+    ._textPixel {
+        text-align: center;
+    }
+    
+    /* seccion modelos 3D */
+    .gridGallery {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(8, 5vw);
+        grid-gap: 15px;
+        padding: 10px;
+    }
+
+    .gallery__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .gallery__item--1 {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 5;
+    }
+
+    .gallery__item--2 {
+        grid-column-start: 5;
+        grid-column-end: 9;
+        grid-row-start: 1;
+        grid-row-end: 5;
+    }
+
+    .gallery__item--3 {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 5;
+        grid-row-end: 9;
+    }
+
+    .gallery__item--4 {
+        grid-column-start: 5;
+        grid-column-end: 9;
+        grid-row-start: 5;
+        grid-row-end: 9;
+    }
+
+    ._textModelo {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    /* seccion twitch */
+    ._tituloTwitch {
+        margin-top: 20px;
+    }
+
+    ._textoTwitch {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    ._imgTwitch {
+        display: flex;
+        padding: 0 10px;
+        gap: 5px;
+    }
+
+    /* pagina proyectos */
+    .tituloP {
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2em;
+    }
+
+    ._textoP {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .gridGaleriaP {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, auto);
+        grid-gap: 15px;
+        padding: 10px;
+    }
+
+    /* pagina aboutme */
+    ._tituloSobreMi {
+        text-align: center;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+
+    }
+    .grid_galeriaAbout {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        align-items: center;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .grid_galeriaAbout p {
+        text-align: center;
+    }
+
+    /* pagina Contactame */
+    .tituloContactame {
+        font-size: 30px;
+        text-transform: uppercase;
+    }
+
+    .textoContactame {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+
+    .email {
+        text-decoration: underline;
+        color: rgb(179, 20, 199);
+    }
+
+    .email a {
+        color: rgb(179, 20, 199);
+    }
+    
+    ._fieldset {
+        width: 100%;
+        margin-bottom: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    ._tituloLegend {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+
+    ._tituloLegend, .labelNombre, .labelEmail, .labelMensaje {
+        color: rgb(0, 255, 0);
+    }
+
+    ._textarea {
+        margin-bottom: 20px;
+    }
+
+    ._botonEnviar {
+        border: 2px solid;
+        letter-spacing: 1px;
+        line-height: 36px;
+        padding: 0 1.4em;
+    }
+
+    ._imgContactame {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+
+    .imgContactame {
+        width: 240px;
+    }
+
+    /* footer */
+    .footer-center {
+        text-align: center;
+    }
+
+    .footer-right {
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+    }
+    
+    .footerIconos li {
+        display: inline-block;
+    }
+    
+    .footerIconos li a {
+        color: rgb(179, 20, 199);
+    }
+    
+    #footer {
+        background-color: black;
+    }
+    
+    #footer-bottom {
+            padding: 10px 0;
+            background: black;
+            color: #888;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 481px) and (max-width: 1023px) {
+    .grid_layout {
+        display: grid;
+        grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+    }
+
+    header {
+        grid-area: "header";
+        margin-bottom: 20px;
+    }
+
+    main {
+        grid-area: "main";
+    }
+
+    footer {
+        grid-area: "footer";
+    }
+
+    h2, h3, h4 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    img {
+        width: 30%;
+    }
+
+    /* topbar */
+    header::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    .topBar {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        background-color: black;
+        height: 32px;
+    }
+
+    .topbarBanner {
+        font-size: 12px;
+    }
+
+    .topbarIconos {
+        display: flex;
+        padding: 0 20px;
+        list-style: none;
+        position: relative;
+    }
+    
+    .topbarIconos li {
+        display: inline-block;
+        margin-left: 10px;
+    }
+    
+    .topbarIconos li a {
+        color: rgb(179, 20, 199);
+    }
+
+    /* navbar */ /*la lista de paginas seria estilo hamburguesa y el logo seria un poco mas grande para cubrir bien el espacio */ 
+    .bottomBar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 32px;
+        margin-left: 13px;
+    }
+
+    .navbar {
+        padding-right: 10px;
+    }
+
+    .navbar ul a:hover {
+        color: rgb(179, 20, 199);
+    }
+    
+    .navbar ul a li::before {
+        content: '';
+        display: block;
+        height: 5px;
+    
+        background-color: rgb(0, 255, 0);
+        position: absolute;
+        top: 0;
+        width: 0%;
+    
+        transition: all ease-in-out 200ms;
+    }
+    
+    .navbar ul a li:hover::before {
+        width: 78px;
+    }
+
+    /* pagina index */
+    /* seccion trabajos recientes */
+    .tituloTrabajos {
+        font-size: 30px;
+        text-transform: uppercase;
+    }
+
+    .imgTrabajosRecientes {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    /* seccion servicios */
+    .imgServicios {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .listaServicios li {
+        margin-bottom: 20px;
+    }
+
+    .listaServicios img {
+        width: max-content;
+    }
+
+    .listaServicios h3 {
+        margin-top: 10px;
+    }
+
+    /* seccion contactarme */
+
+    .contenedor3 {
+        background-color: #523874;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5px;
+    }
+    
+    .tituloContratame {
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 400;
+        color: #808080;
+        padding: 10px 0 10px 0;
+    }
+    
+    .botonContactos {
+        margin: auto;
+        background-color: #523874;
+        border: 2px  ridge black
+    }
+    
+    .botonContactos a {
+        color: black;
+    }
+    
+    .botonContactos span {
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+    
+    .botonContactos:hover {
+        background-color: rgb(0, 255, 0);
+    }
+    
+
+    /* Pagina Servicios */
+    .paginaServicios h2 {
+        text-decoration: underline;
+        color: rgb(179, 20, 199);
+    }
+
+    .tituloServicio {
+        text-align: center;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+    ._descripcion {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+
+    b {
+        color: rgb(179, 20, 199);
+    }
+
+    /* seccion pixel art */
+    ._imgPixel {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    ._textPixel, ._imgPixel {
+        margin-bottom: 20px;
+    }
+
+    ._textPixel {
+        text-align: center;
+    }
+    
+    /* seccion modelos 3D */
+    .gridGallery {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(8, 5vw);
+        grid-gap: 15px;
+        padding: 10px;
+    }
+
+    .gallery__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .gallery__item--1 {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 5;
+    }
+
+    .gallery__item--2 {
+        grid-column-start: 5;
+        grid-column-end: 9;
+        grid-row-start: 1;
+        grid-row-end: 5;
+    }
+
+    .gallery__item--3 {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 5;
+        grid-row-end: 9;
+    }
+
+    .gallery__item--4 {
+        grid-column-start: 5;
+        grid-column-end: 9;
+        grid-row-start: 5;
+        grid-row-end: 9;
+    }
+
+    ._textModelo {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    /* seccion twitch */
+
+    ._tituloTwitch {
+        margin-top: 20px;
+    }
+
+    ._textoTwitch {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    ._imgTwitch {
+        display: flex;
+        padding: 0 10px;
+        gap: 5px;
+    }
+
+    /* pagina proyectos */
+
+    .tituloP {
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    ._textoP {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    ._tituloG {
+        font-size: 2rem;
+    }
+
+    .gridGaleriaP {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, auto);
+        grid-gap: 15px;
+        padding: 10px;
+    }
+
+    /* pagina aboutme */
+    ._tituloSobreMi {
+        text-align: center;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+
+    }
+    .grid_galeriaAbout {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        align-items: center;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .grid_galeriaAbout p {
+        text-align: center;
+    }
+
+    /* pagina Contactame */
+    .tituloContactame {
+        font-size: 30px;
+        text-transform: uppercase;
+    }
+
+    .textoContactame {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+
+    .email {
+        text-decoration: underline;
+        color: rgb(179, 20, 199);
+    }
+
+    .email a {
+        color: rgb(179, 20, 199);
+    }
+    
+    ._fieldset {
+        width: 100%;
+        margin-bottom: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    ._tituloLegend {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+
+    ._tituloLegend, .labelNombre, .labelEmail, .labelMensaje {
+        color: rgb(0, 255, 0);
+    }
+
+    ._textarea {
+        margin-bottom: 20px;
+    }
+
+    ._botonEnviar {
+        border: 2px solid;
+        letter-spacing: 1px;
+        line-height: 36px;
+        padding: 0 1.4em;
+    }
+
+    ._imgContactame {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+
+    .imgContactame {
+        width: 240px;
+    }
+
+    /* footer */
+    .footer-center{
+        text-align: center;
+    }
+
+    .footer-right {
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+    }
+    
+    .footerIconos li {
+        display: inline-block;
+    }
+    
+    .footerIconos li a {
+        color: rgb(179, 20, 199);
+    }
+    
+    #footer {
+        background-color: black;
+    }
+    
+    #footer-bottom {
+            padding: 10px 0;
+            background: black;
+            color: #888;
+    }
+}
+
+/* ajustes entre medios */
+@media screen and (min-width: 527px) {
+    .contenedor3 {
+        padding: 15px;
+    }
+}
+
+@media screen and (min-width: 652px) {
+    .form {
+        display: flex;
+        justify-content: center;
+    }
+
+    ._fieldset {
+        width: 652px;
+        margin-bottom: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* notebook en adelante */
+@media screen and (min-width: 1024px) {
+    .grid_layout {
+        display: grid;
+        grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+    }
+
+    header {
+        grid-area: "header";
+        margin-bottom: 20px;
+    }
+
+    main {
+        grid-area: "main";
+    }
+
+    footer {
+        grid-area: "footer";
+    }
+
+    h2, h3, h4 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    img {
+        width: 30%;
+    }
+
+    /* topbar */
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+
+.topBar {
+    display: flex;
+    justify-content: right;
+    background-color: black;
+    align-items: center;
+    padding: 15px;
+}
+
+.topbarIconos {
+    padding: 0 20px;
+    list-style: none;
+    position: relative;
+}
+
+.topbarIconos li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.topbarIconos li a {
+    color: rgb(179, 20, 199);
+}
+
+
+/* navbar */
+.bottomBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar {
+    width: 100;
+}
+
+.logo {
+    float: left;
+    padding: 10px 0 0 65px;
+    font-size: 3em;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0 60px;
+    list-style: none;
+    position: relative;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 1rem;
+    padding-top: 10px;
+    position: relative;
+}
+
+nav ul a {
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+nav ul a:hover {
+    color: rgb(179, 20, 199);
+}
+
+nav ul a li::before {
+    content: '';
+    display: block;
+    height: 5px;
+
+    background-color: rgb(0, 255, 0);
+    position: absolute;
+    top: 0;
+    width: 0%;
+
+    transition: all ease-in-out 200ms;
+}
+
+nav ul a li:hover::before {
+    width: 100%;
+}
+
+    /* pagina index */
+    /* seccion trabajos recientes */
+    .tituloTrabajos {
+        font-size: 3rem;
+        text-transform: uppercase;
+        margin: 50px 0 50px;
+    }
+
+    .imgTrabajosRecientes {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    /* seccion servicios */
+    .imgServicios {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .titulo__servicio {
+        font-size: 3rem;
+    }
+    .listaServicios li {
+        margin-bottom: 20px;
+    }
+
+    .listaServicios img {
+        width: max-content;
+    }
+
+    .listaServicios h3 {
+        margin-top: 10px;
+        font-size: 2rem;
+        text-decoration: underline;
+    }
+
+    /* seccion contactarme */
+
+    .contenedor3 {
+        background-color: #523874;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 10px 0 25px;
+    }
+    
+    .tituloContratame {
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 400;
+        color: #808080;
+        margin: 26.600px 0 26.600px 0;
+    }
+
+    .botonDeContactos {
+        padding-bottom: 5px;
+    }
+    
+    .botonContactos {
+        margin: auto;
+        background-color: #523874;
+        border: 2px  ridge black;
+        padding: 1px 6px;
+    }
+    
+    .botonContactos a {
+        color: black;
+    }
+    
+    .botonContactos span {
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+    
+    .botonContactos:hover {
+        background-color: rgb(0, 255, 0);
+    }
+    
+
+    /* Pagina Servicios */
+    .paginaServicios h2 {
+        text-decoration: underline;
+        color: rgb(179, 20, 199);
+        font-size: 40px;
+    }
+
+    .paginaServicios p {
+        font-size: 20px;
+    }
+
+    .tituloServicio {
+        text-align: center;
+        margin: 20px;
+        text-transform: uppercase;
+        font-size: 4em;
+    }
+
+    ._ServContenedor1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    ._descripcion {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+
+    b {
+        color: rgb(179, 20, 199);
+    }
+
+    /* seccion pixel art */
+
+    ._imgPixel {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 5px;
+    }
+
+    ._textPixel, ._imgPixel {
+        margin-bottom: 20px;
+    }
+
+    ._textPixel {
+        text-align: center;
+    }
+    
+    /* seccion modelos 3D */
+    ._serContenedor2 {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .tituloModelo3D {
+        margin-top: 10px;
+    }
+
+    .gridGallery {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(8, 5vw);
+        grid-gap: 50px;
+        padding: 0 10px 0 10px;
+    }
+
+    .gallery__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .gallery__item--1 {
+        grid-column-start: 2;
+        grid-column-end: 5;
+        grid-row-start: 2;
+        grid-row-end: 5;
+    }
+
+    .gallery__item--2 {
+        grid-column-start: 5;
+        grid-column-end: 8;
+        grid-row-start: 2;
+        grid-row-end: 5;
+    }
+
+    .gallery__item--3 {
+        grid-column-start: 2;
+        grid-column-end: 5;
+        grid-row-start: 5;
+        grid-row-end: 8;
+    }
+
+    .gallery__item--4 {
+        grid-column-start: 5;
+        grid-column-end: 8;
+        grid-row-start: 5;
+        grid-row-end: 8;
+    }
+
+    ._textModelo {
+        text-align: center;
+    }
+
+    /* seccion twitch */
+
+    ._tituloTwitch {
+        margin-top: 20px;
+    }
+
+    ._textoTwitch {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    ._imgTwitch {
+        display: flex;
+        justify-content: space-evenly;  
+        gap: 5px;
+    }
+
+    /* pagina proyectos */
+    ._ContenedorP {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .tituloP {
+        text-transform: uppercase;
+        text-align: center;
+        margin: 30px 0 30px;
+        font-size: 4em;
+    }
+
+    ._textoP {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    ._tituloG {
+        font-size: 3em;
+    }
+
+    .gridGaleriaP {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, auto);
+        grid-gap: 15px;
+        margin: 0 120.5px 0 120.5px;
+    }
+
+    /* pagina aboutme */
+    ._tituloSobreMi {
+        text-align: center;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+    .tituloSobreMi {
+        font-size: 3rem;
+    }
+
+    .grid_galeriaAbout {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        align-items: center;
+        gap: 15px;
+        padding: 30px;
+    }
+
+    .grid_galeriaAbout p {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    /* pagina Contactame */
+    .tituloContactame {
+        font-size: 3rem;
+        text-transform: uppercase;
+    }
+
+    .textoContactame {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+    }
+
+    .email {
+        text-decoration: underline;
+        color: rgb(179, 20, 199);
+    }
+
+    .email a {
+        color: rgb(179, 20, 199);
+    }
+
+    .form {
+        display: flex;
+        justify-content: center;
+    }
+
+    ._fieldset {
+        width: 800px;
+        margin-bottom: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    ._tituloLegend {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+
+    ._tituloLegend, .labelNombre, .labelEmail, .labelMensaje {
+        color: rgb(0, 255, 0);
+    }
+
+    ._textarea {
+        margin-bottom: 20px;
+    }
+
+    ._botonEnviar {
+        border: 2px solid;
+        letter-spacing: 1px;
+        line-height: 36px;
+        padding: 0 1.4em;
+    }
+
+    ._imgContactame {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+
+    .imgContactame {
+        width: 240px;
+    }
+
+    /* footer */
+    .footer-center {
+        text-align: center;
+    }
+
+    .footer-right {
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+    }
+    
+    .footerIconos li {
+        display: inline-block;
+    }
+    
+    .footerIconos li a {
+        color: rgb(179, 20, 199);
+    }
+    
+    #footer {
+        background-color: black;
+    }
+    
+    #footer-bottom {
+        padding: 10px 0;
+        background: black;
+        color: #888;
+        line-height: 2;
+    }
+}
